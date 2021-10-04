@@ -35,16 +35,16 @@ class InputInterface(Interface):
         if path.isfile(user_input):
             self.mode = Interface.RANK_MODE
             packageUrlList = []
-            fptr = open(user_input, 'r')
-            lines = fptr.readlines()
-            for line in lines:
-                if is_valid_url(line):
-                    packageUrlList.append(line)
-                else:
-                    print("Input %s is not a valid URL" % line)
-                    sys.exit(2)
+            with open(user_input, 'r') as fptr:
+                lines = fptr.readlines()
+                for line in lines:
+                    if is_valid_url(line):
+                        packageUrlList.append(line)
+                    else:
+                        print("Input %s is not a valid URL" % line)
+                        sys.exit(2)
 
-            return 'rank', packageUrlList
+                return 'rank', packageUrlList
 
         else:
             print('Please send a valid input.')
