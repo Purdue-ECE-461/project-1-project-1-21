@@ -53,7 +53,4 @@ class BusFactorScore(ScoreBaseClass):
 
         # Final score is an average of the 3
         scores = [stargazer_score, watcher_score, fork_score]
-        print(scores)
-        print(sum(scores))
-        print(len(scores))
         return sum(scores) / len(scores)

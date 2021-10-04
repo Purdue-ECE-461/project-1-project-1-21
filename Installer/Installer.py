@@ -14,6 +14,15 @@ def install(package):
         pip._internal.main(['install', package])
 
 
+# Installs the gitpython dependency. It will check if it is already installed first.
+def install_gitpython():
+    try:
+        import git
+        return 0
+    except:
+        install('gitpython')
+        return 1
+
 # Installs the validators dependency. It will check if it is already installed first.
 def install_validators():
     try:
@@ -97,6 +106,7 @@ def install_datetime():
 # Installs all dependencies required for this project
 def install_dependencies():
     dependencies_downloaded = 0
+    dependencies_downloaded += install_gitpython()
     dependencies_downloaded += install_validators()
     dependencies_downloaded += install_requests()
     dependencies_downloaded += install_json()
