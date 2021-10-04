@@ -31,9 +31,9 @@ class LicenseCompatibilityScore(ScoreBaseClass):
                               'LGPL',
                               'General Public License',
                               'GPL',
-                              'MIT License']
-
-        print(license_name)
+                              'MIT License',
+                              'GNU Lesser General Public License v2.1',
+                              'lgpl-2.1']
 
         # Check if this package has any of the supported licenses. If yes, give license score of 1.
         if license_name in supported_licenses:

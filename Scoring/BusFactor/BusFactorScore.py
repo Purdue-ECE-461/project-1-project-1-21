@@ -14,9 +14,9 @@ class BusFactorScore(ScoreBaseClass):
 
     def score(self):
         # Determine a sub-score based on number of stargazers
-        if self.stargazers_count > 10000:
+        if self.stargazers_count > 1000:
             stargazer_score = 1
-        elif self.stargazers_count > 1000:
+        elif self.stargazers_count > 500:
             stargazer_score = 0.75
         elif self.stargazers_count > 100:
             stargazer_score = 0.5
@@ -38,9 +38,9 @@ class BusFactorScore(ScoreBaseClass):
             watcher_score = 0
 
         # Determine a sub-score for number of forks
-        if self.forks_count > 10000:
+        if self.forks_count > 1000:
             fork_score = 1
-        elif self.forks_count > 1000:
+        elif self.forks_count > 500:
             fork_score = 0.75
         elif self.forks_count > 100:
             fork_score = 0.5
@@ -50,11 +50,8 @@ class BusFactorScore(ScoreBaseClass):
             fork_score = 0
 
         # Final score is an average of the 3
-        if stargazer_score + watcher_score > fork_score:
-            bus_score = 1
-        elif stargazer_score + watcher_score == fork_score:
-            bus_score = 0.5
-        else:
-            bus_score = 0
-
-        return bus_score
+        scores = [stargazer_score, watcher_score, fork_score]
+        print(scores)
+        print(sum(scores))
+        print(len(scores))
+        return sum(scores) / len(scores)

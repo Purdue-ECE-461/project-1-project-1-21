@@ -14,9 +14,9 @@ class CorrectnessScore(ScoreBaseClass):
         self.forks_count = package.forks_count
 
     def score(self):
-        if self.stargazers_count > 10000:
+        if self.stargazers_count > 1000:
             stargazer_score = 1
-        elif self.stargazers_count > 1000:
+        elif self.stargazers_count > 500:
             stargazer_score = 0.75
         elif self.stargazers_count > 100:
             stargazer_score = 0.5
@@ -25,9 +25,9 @@ class CorrectnessScore(ScoreBaseClass):
         else:
             stargazer_score = 0
 
-        if self.forks_count > 10000:
+        if self.forks_count > 1000:
             fork_score = 1
-        elif self.forks_count > 1000:
+        elif self.forks_count > 500:
             fork_score = 0.75
         elif self.forks_count > 100:
             fork_score = 0.5
@@ -37,9 +37,9 @@ class CorrectnessScore(ScoreBaseClass):
             fork_score = 0
 
         if self.open_issues_count > 500:
-            open_issue_score = 1
+            open_issue_score = 0.5
         elif self.open_issues_count > 250:
-            open_issue_score = 0.75
+            open_issue_score = 1
         elif self.open_issues_count > 100:
             open_issue_score = 0.5
         elif self.open_issues_count > 10:
