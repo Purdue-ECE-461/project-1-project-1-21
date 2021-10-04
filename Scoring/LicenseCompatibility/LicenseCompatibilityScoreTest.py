@@ -28,21 +28,12 @@ def test():
     return num_passed, num_tests
 
 
-# Tests score for a package with a package with no license
-def test1():
-    package = LicenseTestPackage('', isNotNone=False)
-    lcs = LicenseCompatibilityScore.LicenseCompatibilityScore(package)
 
-    score = lcs.score()
-    if score != 0:
-        return 0
-    else:
-        return 1
 
 
 # Tests score for a package with an unsupported license
 def test2():
-    package = LicenseTestPackage('MIT License')
+    package = LicenseTestPackage()
     lcs = LicenseCompatibilityScore.LicenseCompatibilityScore(package)
 
     score = lcs.score()

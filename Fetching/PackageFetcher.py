@@ -59,5 +59,5 @@ class PackageFetcher:
         github_html_component = soup.find('a', href=True, attrs={'aria-labelledby': 'repository'})
         github_url = github_html_component['href']
 
-        # TODO: Add assert that github_url is not None
+        assert github_url is not None
         return self.__fetchGitHubPackage(github_url)
