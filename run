@@ -91,10 +91,12 @@ if __name__ == '__main__':
     # Test mode (result should be in the form of a list [tests_passed, total_tests]
     elif mode == 'test':
         pass
+
     else:
         print("Invalid input, must be a filename, install, or test.")
         sys.exit(2)
 
     # Output based on function mode
     outputInterface = OutputInterface(mode)
+    print('here')
     outputInterface.showResults(result)

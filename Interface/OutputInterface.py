@@ -3,7 +3,7 @@
 # September 23, 2021
 
 from Interface.Interface import Interface
-
+from DEBUG import DEBUG
 
 # The OutputInterface organizes the system output based on what mode is being run and the information provided to it.
 class OutputInterface(Interface):
@@ -16,9 +16,15 @@ class OutputInterface(Interface):
         if self.mode == Interface.INSTALL_MODE:
             print(self.formatInstallResults(results))
         elif self.mode == Interface.TEST_MODE:
-            print(self.formatTestResults(results))
+            results_string = self.formatTestResults(results)
+            print(results_string)
         elif self.mode == Interface.RANK_MODE:
-            print(self.formatRankResults(results))
+            results_string = self.formatRankResults(results)
+            print(results_string)
+
+            if DEBUG:
+                with open('output_1.txt', 'w') as outputFile:
+                    outputFile.write(results_string)
         else:
             print('Output Interface is in Idle mode')
 

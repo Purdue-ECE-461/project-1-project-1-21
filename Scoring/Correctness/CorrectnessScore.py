@@ -37,15 +37,15 @@ class CorrectnessScore(ScoreBaseClass):
             fork_score = 0
 
         if self.open_issues_count > 500:
-            open_issue_score = 0
+            open_issue_score = 1
         elif self.open_issues_count > 250:
-            open_issue_score = 0.25
+            open_issue_score = 0.75
         elif self.open_issues_count > 100:
             open_issue_score = 0.5
         elif self.open_issues_count > 10:
-            open_issue_score = 0.75
+            open_issue_score = 0.25
         else:
-            open_issue_score = 1
+            open_issue_score = 0
 
         correctness_score = round((stargazer_score + open_issue_score + fork_score) / 3, 1)
         return correctness_score

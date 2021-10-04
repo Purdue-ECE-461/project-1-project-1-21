@@ -14,22 +14,29 @@ class LicenseCompatibilityScore(ScoreBaseClass):
 
     def score(self):
         # Pull license information from package
-        license = self.package.license
+        license_info = self.package.license
 
-        # If package has no license at all, give a score of 0.
-        if license is None:
+        if license_info is None:
             return 0
 
-        licenseName = str(license['name'])
+        license_name = str(license_info['name'])
+
+        # If package has no license at all, give a score of 0.
+        if license_name is None:
+            return 0
 
         # List of licenses supported, i.e. GNU LGPLv2.1 or higher
-        supported_licenses = ['GNU Lesser General Public License', 'Lesser General Public License', 'LGPL',
-                              'General Public License', 'GPL']
+        supported_licenses = ['GNU Lesser General Public License',
+                              'Lesser General Public License',
+                              'LGPL',
+                              'General Public License',
+                              'GPL',
+                              'MIT License']
+
+        print(license_name)
 
         # Check if this package has any of the supported licenses. If yes, give license score of 1.
-        for l in supported_licenses:
-            if l.lower() in licenseName.lower():
-                return 1
-
-        # Return a score of 0.1 if there is a license, but just an unsupported one. (May need readjustment for use)
-        return 0.5
+        if license_name in supported_licenses:
+            return 1
+        else:
+            return 0
