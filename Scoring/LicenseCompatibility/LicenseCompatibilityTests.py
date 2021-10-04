@@ -1,17 +1,11 @@
 import json
 import unittest
 from Scoring.LicenseCompatibility.LicenseCompatibilityScore import LicenseCompatibilityScore
-from dataclasses import dataclass
 
 
-@dataclass
-class MockLicense:
-    name: str
-
-
-@dataclass
 class LicenseTestPackage:
-    license: MockLicense
+    def __init__(self, license):
+        self.license = license
 
 
 class LicenseCompatibilityTests(unittest.TestCase):
