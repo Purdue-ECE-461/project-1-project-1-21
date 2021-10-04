@@ -10,7 +10,7 @@ import sys
 from Fetching.PackageFetcher import PackageFetcher
 from Installer import Installer
 from Interface.Input.InputInterface import InputInterface
-from Interface.OutputInterface import OutputInterface
+from Interface.Output.OutputInterface import OutputInterface
 from ScoreCard.AllScores import AllScores
 from ScoreCard.PackageScoreCard import PackageScoreCard
 from Scoring.BusFactor.BusFactorScore import BusFactorScore
