@@ -5,8 +5,6 @@
 import sys
 from os import path
 
-from validators import url as is_valid_url
-
 from Interface.Interface import Interface
 
 INSTALL_COMMAND = 'install'
@@ -38,6 +36,8 @@ class InputInterface(Interface):
             with open(user_input, 'r') as fptr:
                 lines = fptr.readlines()
                 for line in lines:
+                    from validators import url as is_valid_url
+
                     if is_valid_url(line):
                         packageUrlList.append(line)
                     else:

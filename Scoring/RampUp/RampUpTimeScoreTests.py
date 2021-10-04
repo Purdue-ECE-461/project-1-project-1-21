@@ -11,40 +11,40 @@ from RampUpTimeScore import RampUpTimeScore
 
 # Define temporary package class to test this function on
 class RampUpTestPackage:
-    def __init__(self, stargazers, watchers, forks):
-        self.stargazers_count = stargazers
-        self.watchers_count = watchers
+    def __init__(self, forks, has_wiki, has_pages):
         self.forks_count = forks
+        self.has_wiki = has_wiki
+        self.has_pages = has_pages
 
 
 class RampUpTimeScoreTests(unittest.TestCase):
 
     def test_0_correctness(self):
-        mock = RampUpTestPackage(stargazers=0, watchers=0, forks=0)
+        mock = RampUpTestPackage(forks=0, has_wiki=False, has_pages=False)
         sut = RampUpTimeScore(mock)
         score = sut.score()
         self.assertEqual(score, 0)
 
     def test_0_25_correctness(self):
-        mock = RampUpTestPackage(stargazers=50, watchers=50, forks=50)
+        mock = RampUpTestPackage(forks=50, has_wiki=False, has_pages=False)
         sut = RampUpTimeScore(mock)
         score = sut.score()
-        self.assertEqual(score, 0.25)
+        self.assertEqual(score, 0.125)
 
-    def test_0_5_correctness(self):
-        mock = RampUpTestPackage(stargazers=500, watchers=300, forks=500)
+    def test_0_5_correctness(self, has_wiki=False, has_pages=True):
+        mock = RampUpTestPackage(forks=500)
         sut = RampUpTimeScore(mock)
         score = sut.score()
         self.assertEqual(score, 0.5)
 
     def test_0_75_correctness(self):
-        mock = RampUpTestPackage(stargazers=5000, watchers=700, forks=5000)
+        mock = RampUpTestPackage(forks=5000, has_wiki=True, has_pages=True)
         sut = RampUpTimeScore(mock)
         score = sut.score()
-        self.assertEqual(score, 0.75)
+        self.assertEqual(score, 0.875)
 
     def test_1_correctness(self):
-        mock = RampUpTestPackage(stargazers=10001, watchers=1001, forks=10001)
+        mock = RampUpTestPackage(forks=10001, has_wiki=True, has_pages=True)
         sut = RampUpTimeScore(mock)
         score = sut.score()
         self.assertEqual(score, 1)
