@@ -1,6 +1,7 @@
 import unittest
 from Scoring.Correctness.CorrectnessScore import CorrectnessScore
 
+
 class MockCorrectnessScore:
     def __init__(self, stargazers_count, open_issues_count, forks_count):
         self.stargazers_count = stargazers_count
