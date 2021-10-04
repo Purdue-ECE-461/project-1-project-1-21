@@ -52,5 +52,5 @@ class RampUpTimeScore(ScoreBaseClass):
             fork_score = 0
 
         # Final score is an average of the 3
-        ramp_up_time_score = round((stargazer_score + watcher_score + fork_score) / 3, 1)
-        return ramp_up_time_score
+        scores = [stargazer_score, watcher_score, fork_score]
+        return sum(scores) / len(scores)
