@@ -6,19 +6,9 @@
 # Modified by Jason Lei (September 23, 2021, September 28, 2021)
 
 import sys
-
-from Fetching.PackageFetcher import PackageFetcher
-from Installer import Installer
 from Interface.Input.InputInterface import InputInterface
 from Interface.Output.OutputInterface import OutputInterface
-from ScoreCard.AllScores import AllScores
-from ScoreCard.PackageScoreCard import PackageScoreCard
-from Scoring.BusFactor.BusFactorScore import BusFactorScore
-from Scoring.Correctness.CorrectnessScore import CorrectnessScore
-from Scoring.LicenseCompatibility.LicenseCompatibilityScore import LicenseCompatibilityScore
-from Scoring.RampUp.RampUpTimeScore import RampUpTimeScore
-from Scoring.Responsiveness.ResponsivenessScore import ResponsivenessScore
-from Scoring.TotalScore.TotalScore import TotalScore
+
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
@@ -36,6 +26,18 @@ if __name__ == '__main__':
     # Rank mode - Result should be in the form of a string with each url and their scores.
     # See ScoreCard/AllScores for more info
     if mode == 'rank':
+        from Fetching.PackageFetcher import PackageFetcher
+
+        from ScoreCard.AllScores import AllScores
+        from ScoreCard.PackageScoreCard import PackageScoreCard
+        from Scoring.BusFactor.BusFactorScore import BusFactorScore
+        from Scoring.Correctness.CorrectnessScore import CorrectnessScore
+        from Scoring.LicenseCompatibility.LicenseCompatibilityScore import LicenseCompatibilityScore
+        from Scoring.RampUp.RampUpTimeScore import RampUpTimeScore
+        from Scoring.Responsiveness.ResponsivenessScore import ResponsivenessScore
+        from Scoring.TotalScore.TotalScore import TotalScore
+
+
         scoreCardList = []
         # Get all packages and their corresponding scores
         for url in packageUrlList:
@@ -86,7 +88,8 @@ if __name__ == '__main__':
     # Install mode
     # Returns the number of dependencies installed (int)
     elif mode == 'install':
-        result = Installer.install_dependencies()
+    	 from Installer import Installer
+    	 result = Installer.install_dependencies()
 
     # Test mode (result should be in the form of a list [tests_passed, total_tests]
     elif mode == 'test':
@@ -98,5 +101,4 @@ if __name__ == '__main__':
 
     # Output based on function mode
     outputInterface = OutputInterface(mode)
-    print('here')
     outputInterface.showResults(result)
