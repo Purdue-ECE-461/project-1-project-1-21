@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import unittest
 from Scoring.BusFactor.BusFactorScore import BusFactorScore
 

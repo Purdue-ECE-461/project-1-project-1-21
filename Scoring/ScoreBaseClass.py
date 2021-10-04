@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # ScoreBaseClass.py
 # Created by Charles Pisciotta
 # September 21, 2021

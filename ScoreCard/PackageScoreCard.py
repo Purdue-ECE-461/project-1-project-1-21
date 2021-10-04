@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # PackageScoreCard.py
 # Created by Jason Lei
 # September 28, 2021

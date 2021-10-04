@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # ResponsivenessScore.py
 # Created by Charles Pisciotta
 # September 15, 2021

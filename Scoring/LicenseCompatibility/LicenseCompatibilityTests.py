@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import json
 import unittest
 from Scoring.LicenseCompatibility.LicenseCompatibilityScore import LicenseCompatibilityScore

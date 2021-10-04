@@ -1,3 +1,5 @@
+#!/usr/bin/env python3x
+
 # RampUpTimeScore.py
 # Created by Charles Pisciotta
 # September 15, 2021

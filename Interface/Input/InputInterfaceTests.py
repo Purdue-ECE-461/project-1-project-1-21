@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # InputInterfaceTest.py
 # Created by Jason Lei
 # October 1, 2021

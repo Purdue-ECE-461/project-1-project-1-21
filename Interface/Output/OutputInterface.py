@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # OutputInterface.py
 # Created by Jason Lei
 # September 23, 2021
