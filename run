@@ -13,12 +13,12 @@ from Interface.InputInterface import InputInterface
 from Interface.OutputInterface import OutputInterface
 from ScoreCard.AllScores import AllScores
 from ScoreCard.PackageScoreCard import PackageScoreCard
-from Scoring.BusFactorScore import BusFactorScore
-from Scoring.CorrectnessScore import CorrectnessScore
-from Scoring.LicenseCompatibilityScore import LicenseCompatibilityScore
-from Scoring.RampUpTimeScore import RampUpTimeScore
-from Scoring.ResponsivenessScore import ResponsivenessScore
-from Scoring.TotalScore import TotalScore
+from Scoring.BusFactor.BusFactorScore import BusFactorScore
+from Scoring.Correctness.CorrectnessScore import CorrectnessScore
+from Scoring.LicenseCompatibility.LicenseCompatibilityScore import LicenseCompatibilityScore
+from Scoring.RampUp.RampUpTimeScore import RampUpTimeScore
+from Scoring.Responsiveness.ResponsivenessScore import ResponsivenessScore
+from Scoring.TotalScore.TotalScore import TotalScore
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
