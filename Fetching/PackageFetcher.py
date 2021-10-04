@@ -46,8 +46,8 @@ class PackageFetcher:
         github_api_url = 'https://api.github.com/repos/{}/{}'.format(repository_owner, repository_name)
 
         # Get Package
-        auth_token = os.environ['GH_AUTH_TOKEN']
-        auth_header = {'Authorization': 'token {}'.format(auth_token)}
+        # auth_token = os.environ['GH_AUTH_TOKEN']
+        # auth_header = {'Authorization': 'token {}'.format(auth_token)}
         req = requests.get(github_api_url.strip())  # strip() needed because `%0A` gets added to the end of the string
         repository_dict = json.loads(req.text)
         return Package(**repository_dict)
