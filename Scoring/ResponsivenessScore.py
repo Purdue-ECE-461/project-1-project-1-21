@@ -4,6 +4,7 @@
 
 from Scoring.ScoreBaseClass import ScoreBaseClass
 
+
 class ResponsivenessScore(ScoreBaseClass):
 
     def __init__(self, package):
@@ -15,50 +16,50 @@ class ResponsivenessScore(ScoreBaseClass):
         self.network_count = package.network_count
 
     def score(self):
-        if(self.stargazers_count > 10000):
+        if self.stargazers_count > 10000:
             stargazer_score = 1
-        elif(self.stargazers_count > 1000):
+        elif self.stargazers_count > 1000:
             stargazer_score = 0.75
-        elif(self.stargazers_count > 100):
+        elif self.stargazers_count > 100:
             stargazer_score = 0.5
-        elif(self.stargazers_count > 10):
+        elif self.stargazers_count > 10:
             stargazer_score = 0.25
         else:
             stargazer_score = 0
 
-        if(self.watchers_count > 10000):
+        if self.watchers_count > 10000:
             watcher_score = 1
-        elif(self.watchers_count > 1000):
+        elif self.watchers_count > 1000:
             watcher_score = 0.75
-        elif(self.watchers_count > 100):
+        elif self.watchers_count > 100:
             watcher_score = 0.5
-        elif(self.watchers_count > 10):
+        elif self.watchers_count > 10:
             watcher_score = 0.25
         else:
             watcher_score = 0
 
-        if(self.forks_count > 10000):
+        if self.forks_count > 10000:
             fork_score = 1
-        elif (self.forks_count > 1000):
+        elif self.forks_count > 1000:
             fork_score = 0.75
-        elif (self.forks_count > 100):
+        elif self.forks_count > 100:
             fork_score = 0.5
-        elif (self.forks_count > 10):
+        elif self.forks_count > 10:
             fork_score = 0.25
         else:
             fork_score = 0
 
-        if(self.open_issues_count > 500):
+        if self.open_issues_count > 500:
             open_issue_score = 0
-        elif(self.open_issues_count > 250):
+        elif self.open_issues_count > 250:
             open_issue_score = 0.25
-        elif(self.open_issues_count > 100):
+        elif self.open_issues_count > 100:
             open_issue_score = 0.5
-        elif(self.open_issues_count > 10):
+        elif self.open_issues_count > 10:
             open_issue_score = 0.75
         else:
             open_issue_score = 1
 
-
-        responsiveness_score = round((round((stargazer_score + watcher_score)/2,1) + fork_score + open_issue_score)/3,1)
+        responsiveness_score = round(
+            (round((stargazer_score + watcher_score) / 2, 1) + fork_score + open_issue_score) / 3, 1)
         return responsiveness_score
