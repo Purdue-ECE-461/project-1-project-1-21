@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import unittest
-from ResponsivenessScore import ResponsivenessScore
+from Scoring.Responsiveness.ResponsivenessScore import ResponsivenessScore
 
 
 class MockResponsivenessPackage:

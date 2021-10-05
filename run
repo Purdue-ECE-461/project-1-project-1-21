@@ -115,6 +115,7 @@ if __name__ == '__main__':
     	     failures += len(testSuite.errors)
     	     total += testSuite.testsRun
 
+
     	 result = [total-failures, total]
     else:
         print("Invalid input, must be a filename, install, or test.")
