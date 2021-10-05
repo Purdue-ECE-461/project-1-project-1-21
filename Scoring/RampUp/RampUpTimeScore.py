@@ -30,8 +30,6 @@ class RampUpTimeScore(ScoreBaseClass):
 
         # Final score is a weighted avereage of the two
         scores = [fork_score, wiki_page_score, readme_score]
-
-        
         return sum(scores) / len(scores)
 
     def getForkScore(self):

@@ -49,5 +49,5 @@ class CorrectnessScore(ScoreBaseClass):
         else:
             open_issue_score = 0
 
-        correctness_score = round((stargazer_score + open_issue_score + fork_score) / 3, 1)
-        return correctness_score
+        scores = [stargazer_score, open_issue_score, fork_score]
+        return sum(scores) / len(scores)
