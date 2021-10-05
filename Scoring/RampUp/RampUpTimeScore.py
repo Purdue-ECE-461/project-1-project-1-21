@@ -22,9 +22,19 @@ class RampUpTimeScore(ScoreBaseClass):
         self.clone_url = package.clone_url
 
     def score(self):
-        # Get readme.md score
         readme_score = self.getReadmeScore()
 
+        fork_score = self.getForkScore()
+
+        wiki_page_score = self.getWikiPageScore()
+
+        # Final score is a weighted avereage of the two
+        scores = [fork_score, wiki_page_score, readme_score]
+
+        
+        return sum(scores) / len(scores)
+
+    def getForkScore(self):
         # Determine a sub-score for number of forks
         if self.forks_count > 10000:
             fork_score = 1
@@ -36,7 +46,9 @@ class RampUpTimeScore(ScoreBaseClass):
             fork_score = 0.25
         else:
             fork_score = 0
+        return fork_score
 
+    def getWikiPageScore(self):
         # Determine a sub-score for the presence of a wiki or pages
         if self.has_wiki:
             wiki_page_score = 1
@@ -44,19 +56,15 @@ class RampUpTimeScore(ScoreBaseClass):
             wiki_page_score = 0.5
         else:
             wiki_page_score = 0
-
-        # Final score is a weighted avereage of the two
-        scores = [fork_score, wiki_page_score, readme_score]
-
+        return wiki_page_score
         
-        return sum(scores) / len(scores)
-
     def getReadmeScore(self):
         # Clone and check repo for readme.md
         readme_score = 0
         repos_dir = "./Repos/"
         clone_dir = repos_dir + str(self.package_name)
         readme_names = ["/README.md", "/Readme.md", "/readme.md", "/ReadMe.md", "/ReadMe.markdown", "/README.markdown", "/Readme.markdown", "/readme.markdown","/readme", "/README", "/Readme", "/readme.txt",  "/README.txt", "/Readme.txt"]
+        docs_names = ["/docs", "/documents", "/documentation", "/Docs", "/Documents", "/Documentation"]
         try:
             # Clones repo locally
             os.mkdir(repos_dir)
@@ -65,6 +73,10 @@ class RampUpTimeScore(ScoreBaseClass):
             # Check directory for a readme.md file
             for name in readme_names:
                 if os.path.isfile(clone_dir + name):
+                    readme_score = 1
+            # Check directory for a documentation subdirectory
+            for name in docs_names:
+                if os.path.isdir(clone_dir + name):
                     readme_score = 1
         except:
             pass
@@ -76,3 +88,4 @@ class RampUpTimeScore(ScoreBaseClass):
             pass
 
         return readme_score
+
