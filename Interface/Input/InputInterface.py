@@ -13,7 +13,8 @@ INSTALL_COMMAND = "install"
 TEST_COMMAND = "test"
 
 
-# Accepts a given command line argument and determines what mode to activate as a result.
+# Accepts a given command line argument and determines what mode to
+# activate as a result.
 class InputInterface(Interface):
     def __init__(self, mode="idle"):
         super().__init__(mode)
@@ -30,7 +31,8 @@ class InputInterface(Interface):
             self.mode = Interface.TEST_MODE
             return "test", None
 
-        # Enter rank mode if a file is given. Extract the urls from the lines of the file.
+        # Enter rank mode if a file is given. Extract the urls from the lines
+        # of the file.
         elif path.isfile(user_input):
             self.mode = Interface.RANK_MODE
             packageUrlList = []

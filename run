@@ -37,7 +37,6 @@ if __name__ == '__main__':
         from Scoring.Responsiveness.ResponsivenessScore import ResponsivenessScore
         from Scoring.TotalScore.TotalScore import TotalScore
 
-
         scoreCardList = []
         # Get all packages and their corresponding scores
         for url in packageUrlList:
@@ -67,7 +66,12 @@ if __name__ == '__main__':
             responsiveness = responsivenessScorer.score()
 
             # Get Total Score
-            scores = [busFactor, correctness, licenseCompatibility, rampUp, responsiveness]
+            scores = [
+                busFactor,
+                correctness,
+                licenseCompatibility,
+                rampUp,
+                responsiveness]
             totalScorer = TotalScore(scores)
             totalScore = totalScorer.score()
 
@@ -88,35 +92,46 @@ if __name__ == '__main__':
     # Install mode
     # Returns the number of dependencies installed (int)
     elif mode == 'install':
-    	 from Installer import Installer
-    	 result = Installer.install_dependencies()
+        from Installer import Installer
+        result = Installer.install_dependencies()
 
-    # Test mode (result should be in the form of a list [tests_passed, total_tests]
+    # Test mode (result should be in the form of a list [tests_passed,
+    # total_tests]
     elif mode == 'test':
-    	 import unittest
-    	 import Interface.Input.InputInterfaceTests as iitests
-    	 import Interface.Output.OutputInterfaceTests as oitests
-    	 import Models.PackageTests as pkgtests
-    	 import ScoreCard.AllScoresTest as allscoretests
-    	 import ScoreCard.PackageScoreCardTest as psctests
-    	 import Scoring.BusFactor.BusFactorScoreTests as bfscoretests
-    	 import Scoring.LicenseCompatibility.LicenseCompatibilityTests as lcscoretests
-    	 import Scoring.RampUp.RampUpTimeScoreTests as rutscoretests
-    	 import Scoring.Responsiveness.ResponsivenessScoreTests as rscoretests
-    	 import Scoring.TotalScore.TotalScoreTest as tstests
-	
-    	 failures = 0
-    	 total = 0
-    	 tests = [iitests, oitests, pkgtests, allscoretests, psctests, bfscoretests, bfscoretests, lcscoretests, rutscoretests, rscoretests, tstests]
-    	 for test in tests:
-    	     suite = unittest.TestLoader().loadTestsFromModule(test)
-    	     testSuite = unittest.TextTestRunner(verbosity=0).run(suite)
-    	     failures += len(testSuite.failures)
-    	     failures += len(testSuite.errors)
-    	     total += testSuite.testsRun
+        import unittest
+        import Interface.Input.InputInterfaceTests as iitests
+        import Interface.Output.OutputInterfaceTests as oitests
+        import Models.PackageTests as pkgtests
+        import ScoreCard.AllScoresTest as allscoretests
+        import ScoreCard.PackageScoreCardTest as psctests
+        import Scoring.BusFactor.BusFactorScoreTests as bfscoretests
+        import Scoring.LicenseCompatibility.LicenseCompatibilityTests as lcscoretests
+        import Scoring.RampUp.RampUpTimeScoreTests as rutscoretests
+        import Scoring.Responsiveness.ResponsivenessScoreTests as rscoretests
+        import Scoring.TotalScore.TotalScoreTest as tstests
 
+        failures = 0
+        total = 0
+        tests = [
+            iitests,
+            oitests,
+            pkgtests,
+            allscoretests,
+            psctests,
+            bfscoretests,
+            bfscoretests,
+            lcscoretests,
+            rutscoretests,
+            rscoretests,
+            tstests]
+        for test in tests:
+            suite = unittest.TestLoader().loadTestsFromModule(test)
+            testSuite = unittest.TextTestRunner(verbosity=0).run(suite)
+            failures += len(testSuite.failures)
+            failures += len(testSuite.errors)
+            total += testSuite.testsRun
 
-    	 result = [total-failures, total]
+        result = [total - failures, total]
     else:
         print("Invalid input, must be a filename, install, or test.")
         sys.exit(2)

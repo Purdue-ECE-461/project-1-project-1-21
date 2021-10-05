@@ -25,7 +25,8 @@ class PackageScoreCard:
         self.responsiveness_score = responsiveness_score
 
     def toString(self):
-        # URL NET_SCORE RAMP_UP_SCORE CORRECTNESS_SCORE BUS_FACTOR_SCORE RESPONSIVE_MAINTAINER_SCORE LICENSE_SCORE
+        # URL NET_SCORE RAMP_UP_SCORE CORRECTNESS_SCORE BUS_FACTOR_SCORE
+        # RESPONSIVE_MAINTAINER_SCORE LICENSE_SCORE
         score_string = (
             str(self.url).rstrip()
             + " "

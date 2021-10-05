@@ -7,7 +7,8 @@
 from abc import ABC, abstractmethod
 
 
-# The interface class is an abstract class upon which user interfaces are built.
+# The interface class is an abstract class upon which user interfaces are
+# built.
 class Interface(ABC):
     IDLE_MODE = 0
     INSTALL_MODE = 1

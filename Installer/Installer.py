@@ -13,35 +13,38 @@ def install(package):
     subprocess.check_call(["pip3", "install", "--user", package])
 
 
-# Installs the gitpython dependency. It will check if it is already installed first.
+# Installs the gitpython dependency. It will check if it is already
+# installed first.
 def install_gitpython():
     try:
         import git
 
         return 0
-    except:
+    except BaseException:
         install("gitpython")
         return 1
 
 
-# Installs the validators dependency. It will check if it is already installed first.
+# Installs the validators dependency. It will check if it is already
+# installed first.
 def install_validators():
     try:
         import validators
 
         return 0
-    except:
+    except BaseException:
         install("validators")
         return 1
 
 
-# Installs the requests dependency. It will check if it is already installed first.
+# Installs the requests dependency. It will check if it is already
+# installed first.
 def install_requests():
     try:
         import requests
 
         return 0
-    except:
+    except BaseException:
         install("requests")
         return 1
 
@@ -52,7 +55,7 @@ def install_json():
         import json
 
         return 0
-    except:
+    except BaseException:
         install("json")
         return 1
 
@@ -63,7 +66,7 @@ def install_beautifulsoup4():
         import bs4
 
         return 0
-    except:
+    except BaseException:
         install("beautifulsoup4")
         return 1
 
@@ -74,51 +77,55 @@ def install_abc():
         import abc
 
         return 0
-    except:
+    except BaseException:
         install("abc")
         return 1
 
 
-# Installs the dataclasses dependency. It will check if it is already installed first.
+# Installs the dataclasses dependency. It will check if it is already
+# installed first.
 def install_dataclasses():
     try:
         import dataclasses
 
         return 0
-    except:
+    except BaseException:
         install("dataclasses")
         return 1
 
 
-# Installs the typing dependency. It will check if it is already installed first.
+# Installs the typing dependency. It will check if it is already installed
+# first.
 def install_typing():
     try:
         import typing
 
         return 0
-    except:
+    except BaseException:
         install("typing")
         return 1
 
 
-# Installs the datetime dependency. It will check if it is already installed first.
+# Installs the datetime dependency. It will check if it is already
+# installed first.
 def install_datetime():
     try:
         import datetime
 
         return 0
-    except:
+    except BaseException:
         install("datetime")
         return 1
 
 
-# Installs the datetime dependency. It will check if it is already installed first.
+# Installs the datetime dependency. It will check if it is already
+# installed first.
 def install_unittest():
     try:
         import datetime
 
         return 0
-    except:
+    except BaseException:
         install("unittest")
         return 1
 

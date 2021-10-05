@@ -13,7 +13,9 @@ class OutputInterfaceTests(unittest.TestCase):
         output_interface.mode = "install"
         random_num = randrange(100)
         output = output_interface.formatInstallResults(random_num)
-        self.assertEqual("{} dependencies installed...".format(random_num), output)
+        self.assertEqual(
+            "{} dependencies installed...".format(random_num),
+            output)
         self.assertEqual(output_interface.mode, Interface.INSTALL_MODE)
 
     def test_test(self):
@@ -22,12 +24,16 @@ class OutputInterfaceTests(unittest.TestCase):
         random_total = randrange(100)
         random_succeed = randrange(random_total)
 
-        output = output_interface.formatTestResults([random_succeed, random_total])
+        output = output_interface.formatTestResults(
+            [random_succeed, random_total])
         self.assertEqual(
             output,
             "Total: {}\nPassed: {}\n{}/{} test cases passed. {}% line coverage achieved.".format(
-                random_total, random_succeed, random_succeed, random_total, 100
-            ),
+                random_total,
+                random_succeed,
+                random_succeed,
+                random_total,
+                100),
         )
         self.assertEqual(output_interface.mode, Interface.TEST_MODE)
 

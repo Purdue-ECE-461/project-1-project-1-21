@@ -39,7 +39,8 @@ class PackageFetcher:
     def __fetchGitHubPackage(urlString: str) -> Package:
         # Split URL to get repository owner and name
         url_components = urlString.split("/")
-        base_url_index = url_components.index(PackageFetcher.GITHUB_URL_IDENT_KEY)
+        base_url_index = url_components.index(
+            PackageFetcher.GITHUB_URL_IDENT_KEY)
         repository_owner = url_components[base_url_index + 1]
         repository_name = url_components[base_url_index + 2]
 

@@ -7,7 +7,8 @@
 # October 1, 2021
 
 
-# TotalScore is a scorer that determines the average score of a package based on a given list of scores.
+# TotalScore is a scorer that determines the average score of a package
+# based on a given list of scores.
 class TotalScore:
     def __init__(self, scores):
         self.scores = scores

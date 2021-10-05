@@ -43,7 +43,8 @@ class LicenseCompatibilityScore(ScoreBaseClass):
             "GPLv3",
         ]
 
-        # Check if this package has any of the supported licenses. If yes, give license score of 1.
+        # Check if this package has any of the supported licenses. If yes, give
+        # license score of 1.
         if license_name in supported_licenses:
             return 1
         else:

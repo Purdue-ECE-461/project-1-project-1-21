@@ -13,7 +13,10 @@ class MockBusFactorPackage:
 
 class BusFactorScoreTests(unittest.TestCase):
     def test_worst_bus_factor(self):
-        mock = MockBusFactorPackage(stargazers_count=0, watchers_count=0, forks_count=0)
+        mock = MockBusFactorPackage(
+            stargazers_count=0,
+            watchers_count=0,
+            forks_count=0)
         sut = BusFactorScore(mock)
         score = sut.score()
         self.assertEqual(score, 0)

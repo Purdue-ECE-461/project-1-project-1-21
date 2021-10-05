@@ -7,7 +7,8 @@
 from Scoring.ScoreBaseClass import ScoreBaseClass
 
 
-# Correctness = Number of Stars * Number of Closed Issues * (Number of Open Issues + Number of Closed Issues)
+# Correctness = Number of Stars * Number of Closed Issues * (Number of
+# Open Issues + Number of Closed Issues)
 class CorrectnessScore(ScoreBaseClass):
     def __init__(self, package):
         super().__init__(package)

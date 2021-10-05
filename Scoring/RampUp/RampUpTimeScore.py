@@ -98,13 +98,13 @@ class RampUpTimeScore(ScoreBaseClass):
             for name in docs_names:
                 if os.path.isdir(clone_dir + name):
                     readme_score = 1
-        except:
+        except BaseException:
             pass
 
         # Remove cloned repo
         try:
             shutil.rmtree(repos_dir)
-        except:
+        except BaseException:
             pass
 
         return readme_score

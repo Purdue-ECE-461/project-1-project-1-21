@@ -7,7 +7,10 @@
 from Interface.Interface import Interface
 from DEBUG import DEBUG
 
-# The OutputInterface organizes the system output based on what mode is being run and the information provided to it.
+# The OutputInterface organizes the system output based on what mode is
+# being run and the information provided to it.
+
+
 class OutputInterface(Interface):
     def __init__(self, mode="idle"):
         super().__init__(mode)
@@ -44,7 +47,8 @@ class OutputInterface(Interface):
         formatted_string = "Total: {}\nPassed: {}\n{}/{} test cases passed. {}% line coverage achieved."
         return formatted_string.format(total, passed, passed, total, coverage)
 
-    # Formats the results in string format. The rank results data structure MUST have a toString() method.
+    # Formats the results in string format. The rank results data structure
+    # MUST have a toString() method.
     @staticmethod
     def formatRankResults(rankResults):
         return rankResults

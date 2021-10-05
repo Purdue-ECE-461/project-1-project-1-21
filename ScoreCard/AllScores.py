@@ -10,7 +10,8 @@ class AllScores:
         self.score_card_list = score_card_list
 
     def toString(self):
-        # URL NET_SCORE RAMP_UP_SCORE CORRECTNESS_SCORE BUS_FACTOR_SCORE RESPONSIVE_MAINTAINER_SCORE LICENSE_SCORE
+        # URL NET_SCORE RAMP_UP_SCORE CORRECTNESS_SCORE BUS_FACTOR_SCORE
+        # RESPONSIVE_MAINTAINER_SCORE LICENSE_SCORE
         output_string = "URL NET_SCORE RAMP_UP_SCORE CORRECTNESS_SCORE BUS_FACTOR_SCORE RESPONSIVE_MAINTAINER_SCORE LICENSE_SCORE\n"
         for score_card in self.score_card_list:
             output_string += score_card.toString() + "\n"
