@@ -62,6 +62,5 @@ class ResponsivenessScore(ScoreBaseClass):
         else:
             open_issue_score = 1
 
-        responsiveness_score = round(
-            (round((stargazer_score + watcher_score) / 2, 1) + fork_score + open_issue_score) / 3, 1)
-        return responsiveness_score
+        scores = [stargazer_score, watcher_score, fork_score, open_issue_score]
+        return sum(scores) / len(scores)
