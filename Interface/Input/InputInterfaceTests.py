@@ -31,10 +31,11 @@ class InputInterfaceTests(unittest.TestCase):
         self.assertEqual(self.input_interface.mode, Interface.TEST_MODE)
 
     def test_rank(self):
-        mode, urls = self.input_interface.determineMode('./Testing/sample_url_file.txt')
-        self.assertEqual(mode, 'rank')
+        mode, urls = self.input_interface.determineMode("./Testing/sample_url_file.txt")
+        self.assertEqual(mode, "rank")
         self.assertEqual(self.input_interface.mode, Interface.RANK_MODE)
         self.assertIsNotNone(urls)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()

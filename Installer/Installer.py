@@ -10,25 +10,28 @@ import sys
 
 # Installs given package through pip
 def install(package):
-    subprocess.check_call(['pip3', 'install', '--user', package])
+    subprocess.check_call(["pip3", "install", "--user", package])
 
 
 # Installs the gitpython dependency. It will check if it is already installed first.
 def install_gitpython():
     try:
         import git
+
         return 0
     except:
-        install('gitpython')
+        install("gitpython")
         return 1
+
 
 # Installs the validators dependency. It will check if it is already installed first.
 def install_validators():
     try:
         import validators
+
         return 0
     except:
-        install('validators')
+        install("validators")
         return 1
 
 
@@ -36,9 +39,10 @@ def install_validators():
 def install_requests():
     try:
         import requests
+
         return 0
     except:
-        install('requests')
+        install("requests")
         return 1
 
 
@@ -46,9 +50,10 @@ def install_requests():
 def install_json():
     try:
         import json
+
         return 0
     except:
-        install('json')
+        install("json")
         return 1
 
 
@@ -56,9 +61,10 @@ def install_json():
 def install_beautifulsoup4():
     try:
         import bs4
+
         return 0
     except:
-        install('beautifulsoup4')
+        install("beautifulsoup4")
         return 1
 
 
@@ -66,9 +72,10 @@ def install_beautifulsoup4():
 def install_abc():
     try:
         import abc
+
         return 0
     except:
-        install('abc')
+        install("abc")
         return 1
 
 
@@ -76,9 +83,10 @@ def install_abc():
 def install_dataclasses():
     try:
         import dataclasses
+
         return 0
     except:
-        install('dataclasses')
+        install("dataclasses")
         return 1
 
 
@@ -86,9 +94,10 @@ def install_dataclasses():
 def install_typing():
     try:
         import typing
+
         return 0
     except:
-        install('typing')
+        install("typing")
         return 1
 
 
@@ -96,18 +105,21 @@ def install_typing():
 def install_datetime():
     try:
         import datetime
+
         return 0
     except:
-        install('datetime')
+        install("datetime")
         return 1
+
 
 # Installs the datetime dependency. It will check if it is already installed first.
 def install_unittest():
     try:
         import datetime
+
         return 0
     except:
-        install('unittest')
+        install("unittest")
         return 1
 
 

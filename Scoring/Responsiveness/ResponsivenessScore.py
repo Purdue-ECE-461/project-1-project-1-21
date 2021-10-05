@@ -8,7 +8,6 @@ from Scoring.ScoreBaseClass import ScoreBaseClass
 
 
 class ResponsivenessScore(ScoreBaseClass):
-
     def __init__(self, package):
         super().__init__(package)
         self.stargazers_count = package.stargazers_count

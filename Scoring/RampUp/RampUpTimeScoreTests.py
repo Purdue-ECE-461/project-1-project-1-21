@@ -18,7 +18,6 @@ class RampUpTestPackage:
 
 
 class RampUpTimeScoreTests(unittest.TestCase):
-
     def test_0_correctness(self):
         mock = RampUpTestPackage(forks=0, has_wiki=False, has_pages=False)
         sut = RampUpTimeScore(mock)
@@ -50,5 +49,5 @@ class RampUpTimeScoreTests(unittest.TestCase):
         self.assertEqual(score, 1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -9,8 +9,7 @@ from DEBUG import DEBUG
 
 # The OutputInterface organizes the system output based on what mode is being run and the information provided to it.
 class OutputInterface(Interface):
-
-    def __init__(self, mode='idle'):
+    def __init__(self, mode="idle"):
         super().__init__(mode)
 
     # Print results based on what mode the interface is in
@@ -25,10 +24,10 @@ class OutputInterface(Interface):
             print(results_string)
 
             if DEBUG:
-                with open('output_1.txt', 'w') as outputFile:
+                with open("output_1.txt", "w") as outputFile:
                     outputFile.write(results_string)
         else:
-            print('Output Interface is in Idle mode')
+            print("Output Interface is in Idle mode")
 
     # Formats the number of dependencies installed
     @staticmethod
@@ -42,7 +41,7 @@ class OutputInterface(Interface):
         total = testResults[1]
         coverage = passed / total * 100
 
-        formatted_string = 'Total: {}\nPassed: {}\n{}/{} test cases passed. {}% line coverage achieved.'
+        formatted_string = "Total: {}\nPassed: {}\n{}/{} test cases passed. {}% line coverage achieved."
         return formatted_string.format(total, passed, passed, total, coverage)
 
     # Formats the results in string format. The rank results data structure MUST have a toString() method.

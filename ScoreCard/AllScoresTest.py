@@ -10,21 +10,25 @@ from ScoreCard.PackageScoreCard import PackageScoreCard
 
 # Tests the AllScores data structure
 def test():
-    testScores1 = PackageScoreCard("fakeurl",
-                                   total_score=0.5,
-                                   bus_factor_score=0.5,
-                                   correctness_score=0.5,
-                                   license_score=0.5,
-                                   ramp_up_score=0.5,
-                                   responsiveness_score=0.5)
+    testScores1 = PackageScoreCard(
+        "fakeurl",
+        total_score=0.5,
+        bus_factor_score=0.5,
+        correctness_score=0.5,
+        license_score=0.5,
+        ramp_up_score=0.5,
+        responsiveness_score=0.5,
+    )
 
-    testScores2 = PackageScoreCard(url="fakeurl",
-                                   total_score=0.5,
-                                   bus_factor_score=0.5,
-                                   correctness_score=0.5,
-                                   license_score=0.5,
-                                   ramp_up_score=0.5,
-                                   responsiveness_score=0.5)
+    testScores2 = PackageScoreCard(
+        url="fakeurl",
+        total_score=0.5,
+        bus_factor_score=0.5,
+        correctness_score=0.5,
+        license_score=0.5,
+        ramp_up_score=0.5,
+        responsiveness_score=0.5,
+    )
 
     allScores = AllScores([testScores1, testScores2])
 
@@ -49,5 +53,5 @@ def test1(allScores, testScores):
     return 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test()

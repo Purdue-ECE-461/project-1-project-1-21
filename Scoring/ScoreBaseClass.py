@@ -8,7 +8,6 @@ from abc import ABC, abstractmethod
 
 
 class ScoreBaseClass(ABC):
-
     @abstractmethod
     def __init__(self, package):
         self.package = package

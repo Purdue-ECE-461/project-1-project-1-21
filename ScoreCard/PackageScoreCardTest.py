@@ -9,13 +9,15 @@ from ScoreCard.PackageScoreCard import PackageScoreCard
 
 # PackageScoreCardTest tests the functionality of the PackageScoreCard class
 def test():
-    psc = PackageScoreCard("fakeurl",
-                           total_score=0.5,
-                           bus_factor_score=0.5,
-                           correctness_score=0.5,
-                           license_score=0.5,
-                           ramp_up_score=0.5,
-                           responsiveness_score=0.5)
+    psc = PackageScoreCard(
+        "fakeurl",
+        total_score=0.5,
+        bus_factor_score=0.5,
+        correctness_score=0.5,
+        license_score=0.5,
+        ramp_up_score=0.5,
+        responsiveness_score=0.5,
+    )
 
     tests = [test1, test2, test3, test4, test5, test6]
     num_tests = len(tests)
@@ -86,5 +88,5 @@ def test6(psc):
     return 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test()

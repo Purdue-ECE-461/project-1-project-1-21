@@ -15,15 +15,15 @@ class Interface(ABC):
     RANK_MODE = 3
 
     @abstractmethod
-    def __init__(self, mode='idle'):
+    def __init__(self, mode="idle"):
         # The interface changes based on what mode is provided.
         # It can be in install, test, rank, or idle mode.
         # If it is in idle mode, something went wrong.
-        if mode == 'install':
+        if mode == "install":
             self.mode = Interface.INSTALL_MODE
-        elif mode == 'test':
+        elif mode == "test":
             self.mode = Interface.TEST_MODE
-        elif mode == 'rank':
+        elif mode == "rank":
             self.mode = Interface.RANK_MODE
         else:
             self.mode = Interface.IDLE_MODE

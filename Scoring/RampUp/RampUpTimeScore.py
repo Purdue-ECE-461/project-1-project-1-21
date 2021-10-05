@@ -55,14 +55,36 @@ class RampUpTimeScore(ScoreBaseClass):
         else:
             wiki_page_score = 0
         return wiki_page_score
-        
+
     def getReadmeScore(self):
         # Clone and check repo for readme.md
         readme_score = 0
         repos_dir = "./Repos/"
         clone_dir = repos_dir + str(self.package_name)
-        readme_names = ["/README.md", "/Readme.md", "/readme.md", "/ReadMe.md", "/ReadMe.markdown", "/README.markdown", "/Readme.markdown", "/readme.markdown","/readme", "/README", "/Readme", "/readme.txt",  "/README.txt", "/Readme.txt"]
-        docs_names = ["/docs", "/documents", "/documentation", "/Docs", "/Documents", "/Documentation"]
+        readme_names = [
+            "/README.md",
+            "/Readme.md",
+            "/readme.md",
+            "/ReadMe.md",
+            "/ReadMe.markdown",
+            "/README.markdown",
+            "/Readme.markdown",
+            "/readme.markdown",
+            "/readme",
+            "/README",
+            "/Readme",
+            "/readme.txt",
+            "/README.txt",
+            "/Readme.txt",
+        ]
+        docs_names = [
+            "/docs",
+            "/documents",
+            "/documentation",
+            "/Docs",
+            "/Documents",
+            "/Documentation",
+        ]
         try:
             # Clones repo locally
             os.mkdir(repos_dir)
@@ -86,4 +108,3 @@ class RampUpTimeScore(ScoreBaseClass):
             pass
 
         return readme_score
-
