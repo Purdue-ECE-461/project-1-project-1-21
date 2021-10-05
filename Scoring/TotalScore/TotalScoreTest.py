@@ -3,7 +3,7 @@
 # TotalScoreTest.py
 # Created by Jason Lei
 # October 1, 2021
-import TotalScore
+import Scoring.TotalScore.TotalScore
 
 
 # TotalScoreTest tests the functionality of the TotalScore class

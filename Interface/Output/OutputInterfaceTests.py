@@ -2,7 +2,7 @@
 
 import unittest
 from Interface.Interface import Interface
-from OutputInterface import OutputInterface
+from Interface.Output.OutputInterface import OutputInterface
 from random import randrange
 from ScoreCard.PackageScoreCard import PackageScoreCard
 

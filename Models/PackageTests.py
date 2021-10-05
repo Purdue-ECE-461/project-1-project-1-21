@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import unittest
-from Package import *
+from Models.Package import *
 import json
 
 

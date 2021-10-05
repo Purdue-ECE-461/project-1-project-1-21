@@ -52,3 +52,4 @@ class InputInterface(Interface):
             print('Please send a valid input.')
             print('./run <install, test, or a file containing URLs>')
             sys.exit(2)
+
