@@ -4,7 +4,7 @@
 # Created by Jason Lei
 # October 1, 2021
 
-from PackageScoreCard import PackageScoreCard
+from ScoreCard.PackageScoreCard import PackageScoreCard
 
 
 # PackageScoreCardTest tests the functionality of the PackageScoreCard class

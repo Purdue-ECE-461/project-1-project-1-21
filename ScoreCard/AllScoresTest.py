@@ -4,8 +4,8 @@
 # Created by Jason Lei
 # October 1, 2021
 
-from AllScores import AllScores
-from PackageScoreCard import PackageScoreCard
+from ScoreCard.AllScores import AllScores
+from ScoreCard.PackageScoreCard import PackageScoreCard
 
 
 # Tests the AllScores data structure

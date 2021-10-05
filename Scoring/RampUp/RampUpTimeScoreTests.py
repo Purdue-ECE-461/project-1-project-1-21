@@ -6,7 +6,7 @@
 # Modified by Charles Pisciotta
 
 import unittest
-from RampUpTimeScore import RampUpTimeScore
+from Scoring.RampUp.RampUpTimeScore import RampUpTimeScore
 
 
 # Define temporary package class to test this function on

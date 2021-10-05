@@ -36,6 +36,5 @@ class InputInterfaceTests(unittest.TestCase):
         self.assertEqual(self.input_interface.mode, Interface.RANK_MODE)
         self.assertIsNotNone(urls)
 
-
 if __name__ == '__main__':
     unittest.main()

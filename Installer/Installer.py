@@ -102,6 +102,15 @@ def install_datetime():
         install('datetime')
         return 1
 
+# Installs the datetime dependency. It will check if it is already installed first.
+def install_unittest():
+    try:
+        import datetime
+        return 0
+    except:
+        install('unittest')
+        return 1
+
 
 # Installs all dependencies required for this project
 def install_dependencies():
@@ -115,4 +124,5 @@ def install_dependencies():
     dependencies_downloaded += install_dataclasses()
     dependencies_downloaded += install_typing()
     dependencies_downloaded += install_datetime()
+    dependencies_downloaded += insstall_unittest()
     return dependencies_downloaded
