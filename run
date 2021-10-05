@@ -93,7 +93,28 @@ if __name__ == '__main__':
 
     # Test mode (result should be in the form of a list [tests_passed, total_tests]
     elif mode == 'test':
-        pass
+    	 import Interface.Input.InputInterfaceTests as iitests
+    	 import Interface.Output.OutputInterfaceTests as oitests
+    	 import Models.PackageTests as pkgtests
+    	 import ScoreCard.AllScoresTest as allscoretests
+    	 import ScoreCard.PackageScoreCardTest as psctests
+    	 import Scoring.BusFactor.BusFactorScoreTests as bfscoretests
+    	 import Scoring.LicenseCompatibility.LicenseCompatibilityTests as lcscoretests
+    	 import Scoring.RampUp.RampUpTimeScoreTests as rutscoretests
+    	 import Scoring.Responsiveness.ResponsivenessScoreTests as rscoretests
+    	 import Scoring.TotalScore.TotalScoreTests as tstests
+	
+    	 passed = 0
+    	 total = 0
+
+    	 tests = [iitests.main(), oitests.main(), pkgtests.main(), allscoretests.main(), psctests.main(), bfscoretests.main(), lcscoretests.main(), rutscoretests.main(), rscoretests.main(), tstests.main()]
+    	 for test in tests:
+    	     if test == 0:
+    	         passed += 1
+    	     total += 1
+	
+
+    	 results = [passed, total]
 
     else:
         print("Invalid input, must be a filename, install, or test.")
