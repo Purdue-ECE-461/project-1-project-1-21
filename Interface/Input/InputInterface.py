@@ -27,12 +27,12 @@ class InputInterface(Interface):
             return 'install', None
 
         # Enter test mode if the string 'test' is given.
-        if user_input == TEST_COMMAND:
+        elif user_input == TEST_COMMAND:
             self.mode = Interface.TEST_MODE
             return 'test', None
 
         # Enter rank mode if a file is given. Extract the urls from the lines of the file.
-        if path.isfile(user_input):
+        elif path.isfile(user_input):
             self.mode = Interface.RANK_MODE
             packageUrlList = []
             with open(user_input, 'r') as fptr:
@@ -49,7 +49,5 @@ class InputInterface(Interface):
                 return 'rank', packageUrlList
 
         else:
-            print('Please send a valid input.')
-            print('./run <install, test, or a file containing URLs>')
-            sys.exit(2)
+            return None
 
