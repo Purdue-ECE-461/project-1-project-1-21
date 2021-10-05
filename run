@@ -93,8 +93,25 @@ if __name__ == '__main__':
 
     # Test mode (result should be in the form of a list [tests_passed, total_tests]
     elif mode == 'test':
-        pass
+    	 import unittest
+    	 import Interface.Input.InputInterfaceTests as iitests
+    	 import Interface.Output.OutputInterfaceTests as oitests
+    	 import Models.PackageTests as pkgtests
+    	 import ScoreCard.AllScoresTest as allscoretests
+    	 import ScoreCard.PackageScoreCardTest as psctests
+    	 import Scoring.BusFactor.BusFactorScoreTests as bfscoretests
+    	 import Scoring.LicenseCompatibility.LicenseCompatibilityTests as lcscoretests
+    	 import Scoring.RampUp.RampUpTimeScoreTests as rutscoretests
+    	 import Scoring.Responsiveness.ResponsivenessScoreTests as rscoretests
+    	 import Scoring.TotalScore.TotalScoreTest as tstests
+	
+    	 passed = 0
+    	 total = 0
+    	 suite = unittest.TestLoader().loadTestsFromModule(bfscoretests)
+    	 unittest.TextTestRunner(verbosity=2).run(suite)
 
+
+    	 result = [passed, total]
     else:
         print("Invalid input, must be a filename, install, or test.")
         sys.exit(2)
