@@ -105,13 +105,17 @@ if __name__ == '__main__':
     	 import Scoring.Responsiveness.ResponsivenessScoreTests as rscoretests
     	 import Scoring.TotalScore.TotalScoreTest as tstests
 	
-    	 passed = 0
+    	 failures = 0
     	 total = 0
-    	 suite = unittest.TestLoader().loadTestsFromModule(bfscoretests)
-    	 unittest.TextTestRunner(verbosity=2).run(suite)
+    	 tests = [iitests, oitests, pkgtests, allscoretests, psctests, bfscoretests, bfscoretests, lcscoretests, rutscoretests, rscoretests, tstests]
+    	 for test in tests:
+    	     suite = unittest.TestLoader().loadTestsFromModule(test)
+    	     testSuite = unittest.TextTestRunner(verbosity=0).run(suite)
+    	     failures += len(testSuite.failures)
+    	     failures += len(testSuite.errors)
+    	     total += testSuite.testsRun
 
-
-    	 result = [passed, total]
+    	 result = [total-failures, total]
     else:
         print("Invalid input, must be a filename, install, or test.")
         sys.exit(2)
