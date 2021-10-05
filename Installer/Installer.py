@@ -4,14 +4,13 @@
 # Created by Jason Lei
 # October 1, 2021
 import pip
+import subprocess
+import sys
 
 
 # Installs given package through pip
 def install(package):
-    if hasattr(pip, 'main'):
-        pip.main(['install', package])
-    else:
-        pip._internal.main(['install', package])
+    subprocess.check_call(['pip3', 'install', '--user', package])
 
 
 # Installs the gitpython dependency. It will check if it is already installed first.
@@ -124,5 +123,5 @@ def install_dependencies():
     dependencies_downloaded += install_dataclasses()
     dependencies_downloaded += install_typing()
     dependencies_downloaded += install_datetime()
-    dependencies_downloaded += insstall_unittest()
+    dependencies_downloaded += install_unittest()
     return dependencies_downloaded
