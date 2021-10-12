@@ -49,7 +49,7 @@ class PackageFetcher:
         )
 
         # Get Package
-        auth_token = os.environ["GH_AUTH_TOKEN"]
+        auth_token = os.environ["GITHUB_TOKEN"]
         auth_header = {"Authorization": "token {}".format(auth_token)}
         req = requests.get(
             github_api_url.strip(), headers=auth_header
